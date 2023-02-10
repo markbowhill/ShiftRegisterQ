@@ -1,28 +1,28 @@
-#include "ShiftRegisterR.h"
+#include "ShiftRegisterQ.h"
 
 
-ShiftRegisterR::ShiftRegisterR(uint8_t pinD, uint8_t pinC)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC)
 {
     setPins(pinD, pinC);
     significantBit = true;
     displaysQuantity = 1;
 }
 
-ShiftRegisterR::ShiftRegisterR(uint8_t pinD, uint8_t pinC, bool sigB)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool sigB)
 {
     setPins(pinD, pinC);
     significantBit = sigB;
     displaysQuantity = 1;
 }
 
-ShiftRegisterR::ShiftRegisterR(uint8_t pinD, uint8_t pinC, bool sigB, uint8_t disQ)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool sigB, uint8_t disQ)
 {
     setPins(pinD, pinC);
     significantBit = sigB;
     displaysQuantity = disQ;
 }
 
-void ShiftRegisterR::print(String * datos){
+void ShiftRegisterQ::print(String * datos){
     uint8_t largoDatos = datos->length();
 
     //ahora mando a imprimir al display
@@ -43,14 +43,14 @@ void ShiftRegisterR::print(String * datos){
     digitalWrite(pinClock, LOW);
 }
 
-void ShiftRegisterR::setPins(uint8_t pinD, uint8_t pinC){
+void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC){
     pinData     = pinD;
     pinClock    = pinC;
     pinMode(pinData, OUTPUT);
     pinMode(pinClock, OUTPUT);
 }
 
-uint8_t ShiftRegisterR::transChar(char ch){
+uint8_t ShiftRegisterQ::transChar(char ch){
     uint8_t bits;
     switch(ch){
         case '0':  bits = 1 + 2 + 4 + 8 + 16 + 32;        break;

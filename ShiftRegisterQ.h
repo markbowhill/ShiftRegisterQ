@@ -3,11 +3,11 @@
 #include "Arduino.h"
 #include "Wire.h"
 
-class ShiftRegisterR {
+class ShiftRegisterQ {
   public:
-    ShiftRegisterR(uint8_t pinD, uint8_t pinC);
-    ShiftRegisterR(uint8_t pinD, uint8_t pinC, bool bitS);
-    ShiftRegisterR(uint8_t pinD, uint8_t pinC, bool bitS, uint8_t pantQ);
+    ShiftRegisterQ(uint8_t pinD, uint8_t pinC);
+    ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitS);
+    ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitS, uint8_t pantQ);
     void print(String * datos);
     void setPins(uint8_t pinD, uint8_t pinC);
     
