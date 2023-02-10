@@ -5,7 +5,7 @@ Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
 ### Uso
 - Incluir en el sketch
 ```cpp
-#include <ShiftRegisterQ.h>          //https://github.com/markbowhill/ShitfRegisterQ
+#include <ShiftRegisterQ.h>          // https://github.com/markbowhill/ShitfRegisterQ
 ```
 
 - Inicializa una instancia de la clase
