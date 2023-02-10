@@ -12,9 +12,8 @@ ShiftRegister lcdR(pinData, pinClock, pinMS, dQuantity);  // set the Display wit
 void setup()
 {
     String Data = "Hello";
-    lcdR(&Data);
+    lcdR.print(&Data);
 }
-
 
 void loop()
 {
