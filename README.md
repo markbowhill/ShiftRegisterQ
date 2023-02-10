@@ -22,7 +22,7 @@ ShiftRegisterQ shiftR(pinData, pinClock, bitOrder, displaysQ);
 ```cpp
 String Data = "Hello world";
 // Se pasa un puntero del string de datos
-shiftR.setPins(&Data); 
+shiftR.print(&Data); 
 ```
 
 - En el setup también puedes reconfigurar los pines
