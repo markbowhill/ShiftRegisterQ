@@ -10,15 +10,20 @@ Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
 
 - Inicializa una instancia de la clase
 ```cpp
-ShiftRegisterQ shiftR(4, 5, 1, 11); //pin de datos, pin de reloj, bit significatico (1 = Mas, 0 = Menos), cantidad de pantallas
+uint8_t pinD    = 4;    // //pin de datos
+uint8_t pinC    = 5;    // pin de reloj
+bool bitS       = 1;    // bit significatico (1 = Mas, 0 = Menos)
+uint8_t dQ      = 11;   // cantidad de pantallas
+ShiftRegisterQ shiftR(pinD, pinC, bitS, dQ);
 ```
 - para mandar imprimir una cadena de caracteres
 ```cpp
 String Data = "Hello world";
-shiftR.setPins(7, 8); //pin de datos, pin de reloj
+// Se pasa un puntero del string de datos
+shiftR.setPins(&Data); 
 ```
 
 - En el setup también puedes reconfigurar los pines
 ```cpp
-shiftR.setPins(7, 8);
+shiftR.setPins(7, 8); // pin de datos, pin de reloj
 ```
