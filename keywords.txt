@@ -1,12 +1,12 @@
 ###########################################
-# Syntax Coloring Map For SfhiftRegisterR
+# Syntax Coloring Map For SfhiftRegisterQ
 ###########################################
 
 ###########################################
 # Datatypes (KEYWORD1)
 ###########################################
 
-ShiftRegisterR	KEYWORD1
+ShiftRegisterQ	KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)

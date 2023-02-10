@@ -1,19 +1,19 @@
 {
-    "name": "WiFiManager",
-    "version": "0.0.1-beta",
+    "name": "ShiftRegisterQ",
+    "version": "1.0.3-beta",
     "keywords": "shiftregister,shift,register,esp,esp8266,esp32,espressif8266,espressif32,nodemcu,wemos,arduino",
     "description": "Librería personalizada para imprimir cadenas a pantallas con Shift Register",
     "authors":
     [
       {
-          "name": "ramon",
-          "url": ""
+          "name": "Mark",
+          "url": "https://github.com/markbowhill"
       }
     ],
     "repository":
     {
       "type": "git",
-      "url": ""
+      "url": "https://github.com/markbowhill/ShiftRegisterQ"
     },
     "frameworks": "arduino",
     "platforms": 
