@@ -1,5 +1,5 @@
 ###########################################
-# Syntax Coloring Map For SfhiftRegisterQ
+# Syntax Coloring Map For ShiftRegisterQ
 ###########################################
 
 ###########################################
