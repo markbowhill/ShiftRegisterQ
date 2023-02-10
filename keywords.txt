@@ -11,7 +11,8 @@ ShiftRegisterQ	KEYWORD1
 ###########################################
 # Methods and Functions (KEYWORD2)
 ###########################################
-imprimir	KEYWORD2
+print	KEYWORD2
+setPins	KEYWORD2
 ###########################################
 # Constants (LITERAL1)
 ###########################################
