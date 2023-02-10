@@ -2,7 +2,7 @@
 //Library version:1.0.0-beta
 #include <ShiftRegisterR.h>
 
-uint8_t pinData = 5;
+uint8_t pinData = 5
 uint8_t pinClock = 6;
 bool pinMS = 1;
 uint8_t displaysQuantity = 11;
@@ -12,6 +12,11 @@ ShiftRegister shiftR(pinData, pinClock, pinMS, displaysQuantity);  //configurar 
 void setup()
 {
     String Data = "Hello world";
+    shiftR.print(&Data);
+
+    newPinData = 7;
+    newPinClock = 8;
+    shiftR.setPins(newPinData, newPinClock); //Cambiar los pins de comunicación con el shift register
     shiftR.print(&Data);
 }
 
