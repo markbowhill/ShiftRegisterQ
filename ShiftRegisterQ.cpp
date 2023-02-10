@@ -4,28 +4,26 @@
 ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC)
 {
     setPins(pinD, pinC);
-    significantBit = true;
-    displaysQuantity = 1;
+    _orderBit = true;
+    _displaysQuantity = 1;
 }
 
-ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool sigB)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitO)
 {
     setPins(pinD, pinC);
-    significantBit = sigB;
-    displaysQuantity = 1;
+    _orderBit = bitO;
+    _displaysQuantity = 1;
 }
 
-ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool sigB, uint8_t disQ)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitO, uint8_t disQ)
 {
     setPins(pinD, pinC);
-    significantBit = sigB;
-    displaysQuantity = disQ;
+    _orderBit = bitO;
+    _displaysQuantity = disQ;
 }
 
 void ShiftRegisterQ::print(String * datos){
     uint8_t largoDatos = datos->length();
-
-    //ahora mando a imprimir al display
     uint8_t byteData;
     for(uint8_t i = 0; i < largoDatos; i++){
         char d = datos->charAt(i);
@@ -37,15 +35,15 @@ void ShiftRegisterQ::print(String * datos){
                 byteData = transChar(d)+128;
             }
         }
-        shiftOut(pinData, pinClock, significantBit, byteData);
+        shiftOut(_pinData, _pinClock, _orderBit, byteData);
     }
     digitalWrite(pinClock, HIGH);
     digitalWrite(pinClock, LOW);
 }
 
 void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC){
-    pinData     = pinD;
-    pinClock    = pinC;
+    _pinData     = pinD;
+    _pinClock    = pinC;
     pinMode(pinData, OUTPUT);
     pinMode(pinClock, OUTPUT);
 }

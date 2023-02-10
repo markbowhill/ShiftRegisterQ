@@ -6,15 +6,15 @@
 class ShiftRegisterQ {
   public:
     ShiftRegisterQ(uint8_t pinD, uint8_t pinC);
-    ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitS);
-    ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitS, uint8_t pantQ);
+    ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitO);
+    ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitO, uint8_t pantQ);
     void print(String * datos);
     void setPins(uint8_t pinD, uint8_t pinC);
     
   private:
-    uint8_t transChar(char ch);
-    uint8_t displaysQuantity;
-    uint8_t pinData;
-    uint8_t pinClock;
-    bool significantBit;
+    uint8_t   transChar(char ch);
+    uint8_t   _displaysQuantity;
+    uint8_t   _pinData;
+    uint8_t   _pinClock;
+    bool      _orderBit;
 };
