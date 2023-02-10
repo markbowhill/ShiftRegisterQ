@@ -1,3 +1,3 @@
-# ShiftRegisterR
+# ShiftRegisterQ
 
-ShiftRegisterQ Arduino library for Shift Register displays
+Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
