@@ -18,7 +18,7 @@ bool bitS       = 1;    // bit significatico (1 = Mas, 0 = Menos)
 uint8_t dQ      = 11;   // cantidad de pantallas
 ShiftRegisterQ shiftR(pinD, pinC, bitS, dQ);
 ```
-- para mandar imprimir una cadena de caracteres
+- Manda imprimir una cadena de caracteres
 ```cpp
 String Data = "Hello world";
 // Se pasa un puntero del string de datos
