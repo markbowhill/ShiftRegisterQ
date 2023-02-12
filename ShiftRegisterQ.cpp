@@ -1,23 +1,23 @@
 #include "ShiftRegisterQ.h"
 
 
-ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinL, uint8_t pinC)
 {
-    setPins(pinD, pinC);
+    setPins(pinD, pinL, pinC);
     _orderBit = true;
     _displaysQuantity = 1;
 }
 
-ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitO)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinL, uint8_t pinC, bool bitO)
 {
-    setPins(pinD, pinC);
+    setPins(pinD, pinL, pinC);
     _orderBit = bitO;
     _displaysQuantity = 1;
 }
 
-ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, bool bitO, uint8_t disQ)
+ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinL, uint8_t pinC, bool bitO, uint8_t disQ)
 {
-    setPins(pinD, pinC);
+    setPins(pinD, pinL, pinC);
     _orderBit = bitO;
     _displaysQuantity = disQ;
 }
@@ -37,15 +37,17 @@ void ShiftRegisterQ::print(String * datos){
         }
         shiftOut(_pinData, _pinClock, _orderBit, byteData);
     }
-    digitalWrite(pinClock, HIGH);
-    digitalWrite(pinClock, LOW);
+    digitalWrite(_pinLatch, HIGH);
+    digitalWrite(_pinLatch, LOW);
 }
 
-void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC){
-    _pinData     = pinD;
-    _pinClock    = pinC;
-    pinMode(pinData, OUTPUT);
-    pinMode(pinClock, OUTPUT);
+void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinL, uint8_t pinC){
+    _pinData    = pinD;
+    _pinLatch   = pinL;
+    _pinClock   = pinC;
+    pinMode(_pinData, OUTPUT);
+    pinMode(_pinClock, OUTPUT);
+    pinMode(_pinLatch, OUTPUT);
 }
 
 uint8_t ShiftRegisterQ::transChar(char ch){
