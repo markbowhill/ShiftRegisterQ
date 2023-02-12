@@ -24,6 +24,19 @@ ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinL, uint8_t pinC, bool bi
 
 void ShiftRegisterQ::print(String * datos){
     uint8_t largoDatos = datos->length();
+    uint8_t largoDatosSinPuntos = 0;
+    for(uint8_t i = 0; i < largoDatos; i++){
+        char d = datos->charAt(i);
+        if(d != '.' && d != ','){
+            largoDatosSinPuntos++;
+        }
+    }
+    if(largoDatosSinPuntos < _displaysQuantity){
+        uint8_t dif = _displaysQuantity - largoDatosSinPuntos;
+        for(uint8_t i = 1; i <= dif; i++){
+            shiftOut(_pinData, _pinClock, _orderBit, 0);
+        }
+    }
     uint8_t byteData;
     for(uint8_t i = 0; i < largoDatos; i++){
         char d = datos->charAt(i);
@@ -34,8 +47,8 @@ void ShiftRegisterQ::print(String * datos){
             }else{
                 byteData = transChar(d)+128;
             }
+            shiftOut(_pinData, _pinClock, _orderBit, byteData);
         }
-        shiftOut(_pinData, _pinClock, _orderBit, byteData);
     }
     digitalWrite(_pinLatch, HIGH);
     digitalWrite(_pinLatch, LOW);
