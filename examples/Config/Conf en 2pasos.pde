@@ -12,7 +12,7 @@ void setup()
     shiftR.setPins(pinData, pinClock, pinLatch, displayType, displaysQuantity); //Cambiar los pins de comunicación con el shift register
     
     uint8_t displayType = 7; // 7, 15 y 16 segmentos
-    uint8_t displaysQuantity = 12;
+    uint16_t displaysQuantity = 12;
     shiftR.setDisplay(displayType, displaysQuantity);
     
     String Data = "Hello world";
