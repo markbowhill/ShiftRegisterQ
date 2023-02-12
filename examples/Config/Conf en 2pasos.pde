@@ -2,13 +2,10 @@
 #include <ShiftRegisterQ.h>
 
 
-
-ShiftRegisterQ shiftR();  //configurar los pins, el pin significativo y el tipo y cantidad de pantallas
+ShiftRegisterQ shiftR();
 
 void setup()
 {
-    
-
     uint8_t pinData = 4;
     uint8_t pinClock = 5;
     uint8_t pinLatch = 6;
