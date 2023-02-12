@@ -46,8 +46,8 @@ void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinL, uint8_t pinC){
     _pinLatch   = pinL;
     _pinClock   = pinC;
     pinMode(_pinData, OUTPUT);
-    pinMode(_pinClock, OUTPUT);
     pinMode(_pinLatch, OUTPUT);
+    pinMode(_pinClock, OUTPUT);
 }
 
 uint8_t ShiftRegisterQ::transChar(char ch){
