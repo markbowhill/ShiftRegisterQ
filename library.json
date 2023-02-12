@@ -1,6 +1,6 @@
 {
     "name": "ShiftRegisterQ",
-    "version": "1.0.4-beta",
+    "version": "1.0.5",
     "keywords": "shiftregister,shift,register,esp,esp8266,esp32,espressif8266,espressif32,nodemcu,wemos,arduino",
     "description": "Librería personalizada para imprimir cadenas a pantallas con Shift Register",
     "authors":
