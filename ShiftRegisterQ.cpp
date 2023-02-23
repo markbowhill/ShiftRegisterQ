@@ -67,7 +67,10 @@ void ShiftRegisterQ::print(String * datos)
                 }
             }
           	run();
-          	delay(_delayScroll);
+          	char lastChar = datos->charAt(largoDatos-1);
+            if(lastChar != '.' && lastChar != ','){
+              delay(_delayScroll);
+            }
         }
     }
 }
@@ -91,7 +94,7 @@ void ShiftRegisterQ::setDisplay(uint8_t disT, uint16_t disQ)
     _displaysQuantity   = disQ;
 }
 
-void ShiftRegisterQ::setDelayScroll(uint16_t delayScroll)
+void ShiftRegisterQ::setDelayScroll(uint32_t delayScroll)
 {
     _delayScroll = delayScroll;
 }

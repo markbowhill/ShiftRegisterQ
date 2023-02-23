@@ -12,7 +12,7 @@ class ShiftRegisterQ {
     void print(String * datos);
     void setPins(uint8_t pinD, uint8_t pinC, uint8_t pinL);
     void setDisplay(uint8_t disT, uint16_t disQ);
-    void setDelayScroll(uint16_t);
+    void setDelayScroll(uint32_t);
     void clearAll();
     
   private:
@@ -25,5 +25,5 @@ class ShiftRegisterQ {
     uint8_t   _displayType;
     uint16_t  _displaysQuantity;
     bool      _orderBit = true; // default MSBFIRST
-    uint16_t  _delayScroll = 500;
+    uint32_t  _delayScroll = 500;
 };

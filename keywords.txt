@@ -11,9 +11,11 @@ ShiftRegisterQ	KEYWORD1
 ###########################################
 # Methods and Functions (KEYWORD2)
 ###########################################
-print	    KEYWORD2
-setPins	    KEYWORD2
-setDisplay  KEYWORD2
+print	        KEYWORD2
+setPins	        KEYWORD2
+setDisplay      KEYWORD2
+setDelayScroll  KEYWORD2
+clearAll        KEYWORD2
 ###########################################
 # Constants (LITERAL1)
 ###########################################
