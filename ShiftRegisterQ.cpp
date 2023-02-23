@@ -51,11 +51,11 @@ void ShiftRegisterQ::print(String * datos)
         }
         run();
     }else{
-        for(uint8_t i = 1; i <= largoDatos; i++){
+        for(uint8_t i = 0; i < largoDatos; i++){
             if(i < _displaysQuantity){
               clearAll();
             }
-            for(uint8_t j = 0; j < i; j++){
+            for(uint8_t j = 0; j <= i; j++){
                 char d  = datos->charAt(j);
               	char ds = datos->charAt(j+1);
                 if(d != '.' && d != ','){
@@ -67,7 +67,7 @@ void ShiftRegisterQ::print(String * datos)
                 }
             }
           	run();
-          	char lastChar = datos->charAt(largoDatos-1);
+          	char lastChar = datos->charAt(i);
             if(lastChar != '.' && lastChar != ','){
               delay(_delayScroll);
             }
