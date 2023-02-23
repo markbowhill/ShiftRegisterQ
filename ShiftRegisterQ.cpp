@@ -25,7 +25,8 @@ ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL, uint8_t
     setDisplay(disT, disQ);
 }
 
-void ShiftRegisterQ::print(String * datos){
+void ShiftRegisterQ::print(String * datos)
+{
     uint8_t largoDatos = datos->length();
     uint8_t largoDatosSinPuntos = 0;
     for(uint8_t i = 0; i < largoDatos; i++){
@@ -34,44 +35,92 @@ void ShiftRegisterQ::print(String * datos){
             largoDatosSinPuntos++;
         }
     }
-    if(largoDatosSinPuntos < _displaysQuantity){
-        uint8_t dif = _displaysQuantity - largoDatosSinPuntos;
-        for(uint8_t i = 1; i <= dif; i++){
-            shiftOut(_pinData, _pinClock, _orderBit, 0);
-        }
-    }
-    uint16_t byteData;
-    for(uint8_t i = 0; i < largoDatos; i++){
-        char d = datos->charAt(i);
-        if(d != '.' && d != ','){
-            char ds = datos->charAt(i+1);
-            if(ds != '.' && ds != ','){
-                byteData = transChar(d);
-            }else{
-                byteData = transChar(d)+transChar('.');
+    if(largoDatosSinPuntos <= _displaysQuantity){
+        clearAll();
+        uint16_t byteData;
+        for(uint8_t i = 0; i < largoDatos; i++){
+          char d  = datos->charAt(i);
+          char ds = datos->charAt(i+1);
+          if(d != '.' && d != ','){
+            bool p = false;
+            if(ds == '.' || ds == ','){
+              p = true;
             }
-            shiftOut(_pinData, _pinClock, _orderBit, byteData);
+           	sendOne(d, p);
+          }
+        }
+        run();
+    }else{
+        for(uint8_t i = 1; i <= largoDatos; i++){
+            if(i < _displaysQuantity){
+              clearAll();
+            }
+            for(uint8_t j = 0; j < i; j++){
+                char d  = datos->charAt(j);
+              	char ds = datos->charAt(j+1);
+                if(d != '.' && d != ','){
+                  	bool p = false;
+                  	if(ds == '.' || ds == ','){
+                      p = true;
+                  	}
+                    sendOne(d, p);
+                }
+            }
+          	run();
+          	delay(_delayScroll);
         }
     }
-    digitalWrite(_pinLatch, HIGH);
-    digitalWrite(_pinLatch, LOW);
 }
 
-void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC, uint8_t pinL){
+void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC, uint8_t pinL)
+{
     _pinData    = pinD;
     _pinClock   = pinC;
     _pinLatch   = pinL;
     pinMode(_pinData, OUTPUT);
     pinMode(_pinClock, OUTPUT);
     pinMode(_pinLatch, OUTPUT);
+    digitalWrite(_pinData, LOW);
+    digitalWrite(_pinClock, LOW);
+    digitalWrite(_pinLatch, LOW);
 }
 
-void ShiftRegisterQ::setDisplay(uint8_t disT, uint16_t disQ){
+void ShiftRegisterQ::setDisplay(uint8_t disT, uint16_t disQ)
+{
     _displayType        = disT;
     _displaysQuantity   = disQ;
 }
 
-uint16_t ShiftRegisterQ::transChar(char ch){
+void ShiftRegisterQ::setDelayScroll(uint16_t delayScroll)
+{
+    _delayScroll = delayScroll;
+}
+
+void ShiftRegisterQ::clearAll()
+{
+    for(uint16_t i = 1; i <= _displaysQuantity; i++){
+        sendOne(' ', false);
+    }
+    run();
+}
+
+void ShiftRegisterQ::sendOne(char d, bool p)
+{
+    uint16_t byteData = transChar(d);
+    if(p){
+      byteData += transChar('.');
+    }
+    shiftOut(_pinData, _pinClock, _orderBit, byteData);
+}
+
+void ShiftRegisterQ::run()
+{
+    digitalWrite(_pinLatch, HIGH);
+    digitalWrite(_pinLatch, LOW);
+}
+
+uint16_t ShiftRegisterQ::transChar(char ch)
+{
     uint16_t bits;
     if(_displayType == 7){
         switch(ch){
