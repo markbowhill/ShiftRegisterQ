@@ -18,7 +18,7 @@ class ShiftRegisterQ {
     
   private:
     void      sendOne(char, bool);
-    void      initPins(uint8_t, uint8_t, uint8_t);
+    void      initPins();
     void      run();
     uint16_t  transChar(char);
     uint8_t   _pinData = 7;
