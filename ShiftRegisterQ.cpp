@@ -3,6 +3,7 @@
 
 ShiftRegisterQ::ShiftRegisterQ()
 {
+    initPins();
 }
 
 ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL)
@@ -77,12 +78,7 @@ void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC, uint8_t pinL)
     _pinData    = pinD;
     _pinClock   = pinC;
     _pinLatch   = pinL;
-    pinMode(_pinData, OUTPUT);
-    pinMode(_pinClock, OUTPUT);
-    pinMode(_pinLatch, OUTPUT);
-    digitalWrite(_pinData, LOW);
-    digitalWrite(_pinClock, LOW);
-    digitalWrite(_pinLatch, LOW);
+    initPins();
 }
 
 void ShiftRegisterQ::setDisplay(uint8_t disT)
@@ -116,6 +112,16 @@ void ShiftRegisterQ::sendOne(char d, bool p)
       byteData += transChar('.');
     }
     shiftOut(_pinData, _pinClock, _orderBit, byteData);
+}
+
+void ShiftRegisterQ::initPins()
+{
+    pinMode(_pinData, OUTPUT);
+    pinMode(_pinClock, OUTPUT);
+    pinMode(_pinLatch, OUTPUT);
+    digitalWrite(_pinData, LOW);
+    digitalWrite(_pinClock, LOW);
+    digitalWrite(_pinLatch, LOW);
 }
 
 void ShiftRegisterQ::run()
