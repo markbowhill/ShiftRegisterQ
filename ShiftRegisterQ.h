@@ -25,5 +25,5 @@ class ShiftRegisterQ {
     uint8_t   _displayType;
     uint16_t  _displaysQuantity;
     bool      _orderBit = true; // default MSBFIRST
-    uint32_t  _delayScroll = 500;
+    uint32_t  _delayScroll = 200;
 };
