@@ -13,6 +13,8 @@ void setup()
 {
     String Data = "Hello world";
     shiftR.print(&Data);
+
+    shiftR.clearAll(); //limpia toda/s las pantallas
 }
 
 void loop()
