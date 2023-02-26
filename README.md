@@ -8,9 +8,9 @@ Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
 
 ### Compatibilidad
 
--[x] 7 Segmentos
--[ ] 15 Segmentos
--[ ] 16 Segmentos
+- [x] 7 Segmentos
+- [ ] 15 Segmentos
+- [ ] 16 Segmentos
 
 ### Chips controladores
 
