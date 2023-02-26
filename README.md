@@ -4,6 +4,17 @@ Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
 
 ![Release](https://img.shields.io/github/v/release/markbowhill/ShiftRegisterQ)
 
+## Compatibilidad
+
+### Compatibilidad
+
+-[x] 7 Segmentos
+-[ ] 15 Segmentos
+-[ ] 16 Segmentos
+
+### Chips controladores
+
+-[x] 74HC595
 ### Uso
 - Incluir en el sketch
 ```cpp
