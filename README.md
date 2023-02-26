@@ -73,7 +73,7 @@ shiftR.setDisplay(16, 5); // 16->pantalla de 16 segmentos, 5->cantidad pantallas
 shiftR.setDelayScroll(150); // 150 milisegundos por ejemplo (default: 200)
 ```
 
-- Para limpiar todas las pantallas de cualquier texto
+- Para limpiar todas las pantallas
 ```cpp
 shiftR.clearAll();
 ```
