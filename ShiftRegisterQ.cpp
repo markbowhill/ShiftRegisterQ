@@ -23,6 +23,15 @@ ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL, uint8_t
     setDisplay(disT, disQ);
 }
 
+void ShiftRegisterQ::print(char * ch, uint16_t size)
+{
+    String * d;
+    for(uint16_t i = 0; i < size; i++){
+        *d += ch[i];
+    }
+    print(d);
+}
+
 void ShiftRegisterQ::print(String * datos)
 {
     uint8_t largoDatos = datos->length();

@@ -9,6 +9,7 @@ class ShiftRegisterQ {
     ShiftRegisterQ(uint8_t, uint8_t, uint8_t);
     ShiftRegisterQ(uint8_t, uint8_t, uint8_t, uint8_t);
     ShiftRegisterQ(uint8_t, uint8_t, uint8_t, uint8_t, uint16_t);
+    void print(char *, uint16_t);
     void print(String *);
     void setPins(uint8_t, uint8_t, uint8_t);
     void setDisplay(uint8_t);
