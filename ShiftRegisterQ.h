@@ -9,7 +9,7 @@ class ShiftRegisterQ {
     ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL);
     ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL, uint8_t disT);
     ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL, uint8_t disT, uint16_t disQ);
-    void print(String*);
+    void print(String *);
     void setPins(uint8_t, uint8_t, uint8_t);
     void setDisplay(uint8_t);
     void setDisplay(uint8_t, uint16_t);
@@ -25,6 +25,6 @@ class ShiftRegisterQ {
     uint8_t   _pinLatch = 8;
     uint8_t   _displayType = 7;
     uint16_t  _displaysQuantity = 1;
-    bool      _orderBit = true; // default MSBFIRST
+    bool      _orderBit = true; // default true equivalente a MSBFIRST
     uint32_t  _delayScroll = 200;
 };
