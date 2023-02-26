@@ -14,13 +14,13 @@ Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
 ```cpp
 uint8_t pinData     = 4;        // pin de datos
 uint8_t pinClock    = 5;        // pin de reloj
-bool bitOrder       = true;     // bit significatico (true = MSBFIRST, false = LSBFIRST)
-uint8_t displaysQ   = 11;       // cantidad de pantallas
+uint8_t displayT    = 7;        // tipo/segmentos de pantalla (default: pantalla 7 segmentos)
+uint8_t displaysQ   = 11;       // cantidad de pantallas (default: 1)
 ```
 
 - Inicializa una instancia de la clase
 ```cpp
-ShiftRegisterQ shiftR(pinData, pinClock, bitOrder, displaysQ);
+ShiftRegisterQ shiftR(pinData, pinClock, displayT, displaysQ);
 ```
 
 - Manda imprimir una cadena de caracteres

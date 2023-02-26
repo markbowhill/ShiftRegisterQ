@@ -3,14 +3,11 @@
 
 ShiftRegisterQ::ShiftRegisterQ()
 {
-    setPins(7, 9, 8);
-    setDisplay(7, 1);
 }
 
 ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL)
 {
     setPins(pinD, pinC, pinL);
-    setDisplay(7, 1);
 }
 
 ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL, uint8_t disT)
@@ -86,6 +83,11 @@ void ShiftRegisterQ::setPins(uint8_t pinD, uint8_t pinC, uint8_t pinL)
     digitalWrite(_pinData, LOW);
     digitalWrite(_pinClock, LOW);
     digitalWrite(_pinLatch, LOW);
+}
+
+void ShiftRegisterQ::setDisplay(uint8_t disT)
+{
+    _displayType        = disT;
 }
 
 void ShiftRegisterQ::setDisplay(uint8_t disT, uint16_t disQ)
