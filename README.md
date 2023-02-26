@@ -59,6 +59,12 @@ shiftR.setPins(4, 5, 6); // 4->pin de datos, 5->pin de reloj, 6->pin de latch
 
 - También puedes reconfigurar la pantalla
 ```cpp
+shiftR.setDisplay(16); // 16->pantalla de 16 segmentos
+```
+
+ó
+
+```cpp
 shiftR.setDisplay(16, 5); // 16->pantalla de 16 segmentos, 5->cantidad pantallas
 ```
 
