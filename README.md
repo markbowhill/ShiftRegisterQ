@@ -32,7 +32,7 @@ Librería Arduino ShiftRegisterQ para imprimir en pantallas Shift Register
  - En el Arduino IDE ir a Programa/Incluir librería/Añadir biblioteca .ZIP...
   ![Añadir biblioteca](https://i.ibb.co/NWZthZQ/4.jpg)
 
- - Cambiar nombre de la carpeta de la biblioteca instalada a `ShiftRegisterQ`. El direcciorio por defecto donde se instala es `C:\Users\-usuario-\Documents\Arduino\libraries`
+ - Cambiar nombre de la carpeta de la biblioteca instalada a `ShiftRegisterQ`. El directorio por defecto donde se instala es `C:\Users\-usuario-\Documents\Arduino\libraries`
  reemplazando -usuario- por el usuario de la sesión de windows donde se instaló.
 
 
