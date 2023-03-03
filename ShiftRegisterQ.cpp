@@ -173,9 +173,9 @@ uint16_t ShiftRegisterQ::transChar(char ch)
             case 'P':  bits = 1 + 2 + 16 + 32 + 64;           break;
             //case 'Q':  bits = 0;                              break;
             //case 'R':  bits = 0;                              break;
-            //case 'S':  bits = 0;                              break;
+            case 'S':  bits = 1 + 4 + 8 + 32 + 64;            break;
             //case 'T':  bits = 0;                              break;
-            //case 'U':  bits = 0;                              break;
+            case 'U':  bits = 2 + 4 + 8 + 16 + 32;            break;
             //case 'V':  bits = 0;                              break;
             //case 'W':  bits = 0;                              break;
             //case 'X':  bits = 0;                              break;
@@ -202,7 +202,7 @@ uint16_t ShiftRegisterQ::transChar(char ch)
             //case 'r':  bits = 0;                              break;
             //case 's':  bits = 0;                              break;
             //case 't':  bits = 0;                              break;
-            //case 'u':  bits = 0;                              break;
+            case 'u':  bits = 4 + 8 + 16;                     break;
             //case 'v':  bits = 0;                              break;
             //case 'w':  bits = 0;                              break;
             //case 'x':  bits = 0;                              break;
@@ -210,11 +210,11 @@ uint16_t ShiftRegisterQ::transChar(char ch)
             //case 'z':  bits = 0;                              break;
             case '-':  bits = 64;                             break;
             case '_':  bits = 8;                              break;
-            case ' ':  bits = 0;                              break;
             case '.':  bits = 128;                            break;
             case ',':  bits = 128;                            break;
             case '°':  bits = 1 + 2 + 32 + 64;                break;
             case 'º':  bits = 1 + 2 + 32 + 64;                break;
+            case ' ':  bits = 0;                              break;
             default:   bits = 0;
         }
     }
