@@ -176,7 +176,7 @@ uint16_t ShiftRegisterQ::transChar(char ch)
             case 'S':  bits = 1 + 4 + 8 + 32 + 64;            break;
             //case 'T':  bits = 0;                              break;
             case 'U':  bits = 2 + 4 + 8 + 16 + 32;            break;
-            //case 'V':  bits = 0;                              break;
+            case 'V':  bits = 2 + 4 + 8 + 16 + 32;            break;
             //case 'W':  bits = 0;                              break;
             //case 'X':  bits = 0;                              break;
             case 'Y':  bits = 2 + 4 + 8 + +32 + 64;           break;
