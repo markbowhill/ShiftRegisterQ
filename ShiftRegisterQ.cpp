@@ -213,6 +213,8 @@ uint16_t ShiftRegisterQ::transChar(char ch)
             case ' ':  bits = 0;                              break;
             case '.':  bits = 128;                            break;
             case ',':  bits = 128;                            break;
+            case '°':  bits = 1 + 2 + 32 + 64;                break;
+            case 'º':  bits = 1 + 2 + 32 + 64;                break;
             default:   bits = 0;
         }
     }
