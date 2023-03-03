@@ -155,7 +155,7 @@ uint16_t ShiftRegisterQ::transChar(char ch)
             case '8':  bits = 1 + 2 + 4 + 8 + 16 + 32 + 64;   break;
             case '9':  bits = 1 + 2 + 4 + 8 + 32 + 64;        break;
             case 'A':  bits = 1 + 2 + 4 + 16 + 32 + 64;       break;
-            case 'B':  bits = 4 + 8 + 16 + 32 + 64;           break;
+            case 'B':  bits = 1 + 2 + 4 + 8 + 16 + 32 + 64;   break;
             case 'C':  bits = 1 + 8 + 16 + 32;                break;
             case 'D':  bits = 2 + 4 + 8 + 16 + 64;            break;
             case 'E':  bits = 1 + 8 + 16 + 32 + 64;           break;
