@@ -26,7 +26,7 @@ ShiftRegisterQ::ShiftRegisterQ(uint8_t pinD, uint8_t pinC, uint8_t pinL, uint8_t
 void ShiftRegisterQ::print(char * ch, uint16_t size)
 {
     String d = "";
-    for(uint16_t i = 0; i < size; i++){
+    for(uint16_t i = 0; i < size - 1; i++){
         d += ch[i];
     }
     print(&d);
